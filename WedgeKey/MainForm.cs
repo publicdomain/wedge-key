@@ -8,6 +8,7 @@ namespace WedgeKey
     // Directives
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics;
     using System.Drawing;
     using System.Reflection;
     using System.Windows.Forms;
@@ -63,7 +64,8 @@ namespace WedgeKey
         /// <param name="e">Event arguments.</param>
         private void OnMsdnLinkLabelLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            // TODO Add code
+            // Open MSDN
+            Process.Start("https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.sendkeys.send?view=windowsdesktop-6.0");
         }
 
         /// <summary>
