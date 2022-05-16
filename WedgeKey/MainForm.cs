@@ -73,7 +73,25 @@ namespace WedgeKey
         /// <param name="e">Event arguments.</param>
         private void OnStartStopButtonClick(object sender, EventArgs e)
         {
-            // TODO Add code
+            // Check for Star(t) vs Sto(p)
+            if (this.startStopButton.Text.EndsWith("t", StringComparison.InvariantCulture))
+            {
+                // Subscribe
+                this.Subscribe();
+
+                // Change to stop
+                this.startStopButton.Text = "&Stop";
+                this.startStopButton.ForeColor = Color.Red;
+            }
+            else
+            {
+                // Unsubscribe
+                this.Unsubscribe();
+
+                // Reset to start
+                this.startStopButton.Text = "&Start";
+                this.startStopButton.ForeColor = Color.DarkGreen;
+            }
         }
 
         /// <summary>
@@ -171,6 +189,16 @@ namespace WedgeKey
 
             // Update KeyCode label
             this.keyCodeToolStripStatusLabel.Text = $"{Convert.ToInt32(e.KeyCode)}";
+
+            // Send key
+            try
+            {
+                SendKeys.SendWait(this.keyComboBox.Text);
+            }
+            catch (Exception ex)
+            {
+                // Let it wall through
+            }
         }
 
         /// <summary>
