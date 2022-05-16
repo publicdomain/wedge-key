@@ -147,6 +147,16 @@ namespace WedgeKey
         }
 
         /// <summary>
+        /// Unsubscribe this instance.
+        /// </summary>
+        public void Unsubscribe()
+        {
+            m_GlobalHook.KeyDown -= OnGlobalHookKeyDown;
+
+            m_GlobalHook.Dispose();
+        }
+
+        /// <summary>
         /// Handles the global hook key down.
         /// </summary>
         /// <param name="sender">Sender object.</param>
