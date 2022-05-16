@@ -101,7 +101,19 @@ namespace WedgeKey
         /// <param name="e">Event arguments.</param>
         private void OnNewToolStripMenuItemClick(object sender, EventArgs e)
         {
-            // TODO Add code
+            // Check for Star(t) vs Sto(p)
+            if (this.startStopButton.Text.EndsWith("p", StringComparison.InvariantCulture))
+            {
+                // Click the button to stop
+                this.startStopButton.PerformClick();
+            }
+
+            // Reset count
+            this.count = 0;
+
+            // Reset labels
+            this.countToolStripStatusLabel.Text = "0";
+            this.keyCodeToolStripStatusLabel.Text = "-";
         }
 
         /// <summary>
