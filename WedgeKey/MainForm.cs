@@ -137,6 +137,16 @@ namespace WedgeKey
         }
 
         /// <summary>
+        /// Subscribe this instance.
+        /// </summary>
+        public void Subscribe()
+        {
+            m_GlobalHook = Hook.GlobalEvents();
+
+            m_GlobalHook.KeyDown += OnGlobalHookKeyDown;
+        }
+
+        /// <summary>
         /// Handles the global hook key down.
         /// </summary>
         /// <param name="sender">Sender object.</param>
