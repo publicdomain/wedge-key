@@ -153,7 +153,8 @@ namespace WedgeKey
         /// <param name="e">Event arguments.</param>
         private void OnOriginalThreadRedditcomToolStripMenuItemClick(object sender, EventArgs e)
         {
-            // TODO Add code
+            // Open original thread
+            Process.Start("https://www.reddit.com/r/software/comments/uqvjoq/software_to_assign_a_keyboard_key_to_an_external/");
         }
 
         /// <summary>
