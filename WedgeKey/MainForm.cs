@@ -205,7 +205,7 @@ namespace WedgeKey
             // Set version for generating semantic version
             Version version = typeof(MainForm).GetTypeInfo().Assembly.GetName().Version;
 
-            // Set about form
+            // Set about formgit diff
             var aboutForm = new AboutForm(
                 $"About {programTitle}",
                 $"{programTitle} {version.Major}.{version.Minor}.{version.Build}",
